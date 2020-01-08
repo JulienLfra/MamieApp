@@ -2,7 +2,6 @@ import React from "react";
 
 // reactstrap components
 import {
-  Button,
   Card,
   CardHeader,
   CardBody,
@@ -29,13 +28,11 @@ class Profile extends React.Component {
                 <Row className="justify-content-center">
                   <Col className="order-lg-2" lg="3">
                     <div className="card-profile-image">
-                      <a href="#pablo" onClick={e => e.preventDefault()}>
                         <img
                           alt="..."
                           className="rounded-circle"
                           src={require("../../../assets/img/theme/ppf.jpg")}
                         />
-                      </a>
                     </div>
                   </Col>
                 </Row>
