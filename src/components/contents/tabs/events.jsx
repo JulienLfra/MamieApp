@@ -6,8 +6,7 @@ import {
   CardBody,
   Container,
   Row,
-  Col,
-  UncontrolledTooltip
+  Col
 } from "reactstrap";
 // core components
 import Header from "../../headers/header.jsx";
@@ -40,16 +39,6 @@ class Events extends React.Component {
                             <span>Fête de la bière</span>
                           </div>
                         </button>
-                      
-                      <UncontrolledTooltip
-                        delay={0}
-                        trigger="hover focus"
-                        target="tooltip982655500"
-                      >
-                        {this.state.copiedText === "active-40"
-                          ? "Copied"
-                          : "Copy To Clipboard"}
-                      </UncontrolledTooltip>
                     </Col>
                     <Col lg="3" md="6">
                         <button
@@ -63,16 +52,6 @@ class Events extends React.Component {
                             <span>Noel</span>
                           </div>
                         </button>
-                      
-                      <UncontrolledTooltip
-                        delay={0}
-                        trigger="hover focus"
-                        target="tooltip47550434"
-                      >
-                        {this.state.copiedText === "air-baloon"
-                          ? "Copied"
-                          : "Copy To Clipbord"}
-                      </UncontrolledTooltip>
                     </Col>
                     <Col lg="3" md="6">
                         <button
@@ -86,16 +65,6 @@ class Events extends React.Component {
                             <span>Jour de l'an</span>
                           </div>
                         </button>
-                      
-                      <UncontrolledTooltip
-                        delay={0}
-                        trigger="hover focus"
-                        target="tooltip945481346"
-                      >
-                        {this.state.copiedText === "album-2"
-                          ? "Copied"
-                          : "Copy To Clipbord"}
-                      </UncontrolledTooltip>
                     </Col>
                     <Col lg="3" md="6">
                         <button
@@ -109,16 +78,6 @@ class Events extends React.Component {
                             <span>Fête des lumières</span>
                           </div>
                         </button>
-                      
-                      <UncontrolledTooltip
-                        delay={0}
-                        trigger="hover focus"
-                        target="tooltip662352101"
-                      >
-                        {this.state.copiedText === "align-center"
-                          ? "Copied"
-                          : "Copy To Clipbord"}
-                      </UncontrolledTooltip>
                     </Col>
                     <Col lg="3" md="6">
                         <button
@@ -132,16 +91,6 @@ class Events extends React.Component {
                             <span>Vacance</span>
                           </div>
                         </button>
-                      
-                      <UncontrolledTooltip
-                        delay={0}
-                        trigger="hover focus"
-                        target="tooltip125499785"
-                      >
-                        {this.state.copiedText === "align-left-2"
-                          ? "Copied"
-                          : "Copy To Clipbord"}
-                      </UncontrolledTooltip>
                     </Col>
                     <Col lg="3" md="6">
                         <button
@@ -155,16 +104,6 @@ class Events extends React.Component {
                             <span>Anniversaire Didier</span>
                           </div>
                         </button>
-                      
-                      <UncontrolledTooltip
-                        delay={0}
-                        trigger="hover focus"
-                        target="tooltip382136785"
-                      >
-                        {this.state.copiedText === "ambulance"
-                          ? "Copied"
-                          : "Copy To Clipbord"}
-                      </UncontrolledTooltip>
                     </Col>
                     <Col lg="3" md="6">
                         <button
@@ -178,16 +117,6 @@ class Events extends React.Component {
                             <span>Cousinade</span>
                           </div>
                         </button>
-                      
-                      <UncontrolledTooltip
-                        delay={0}
-                        trigger="hover focus"
-                        target="tooltip3354607"
-                      >
-                        {this.state.copiedText === "app"
-                          ? "Copied"
-                          : "Copy To Clipbord"}
-                      </UncontrolledTooltip>
                     </Col>
                     <Col lg="3" md="6">
                         <button
@@ -201,16 +130,6 @@ class Events extends React.Component {
                             <span>Fête de Sylvain</span>
                           </div>
                         </button>
-                      
-                      <UncontrolledTooltip
-                        delay={0}
-                        trigger="hover focus"
-                        target="tooltip949558633"
-                      >
-                        {this.state.copiedText === "archive-2"
-                          ? "Copied"
-                          : "Copy To Clipbord"}
-                      </UncontrolledTooltip>
                     </Col>
                     <Col lg="3" md="6">
                         <button
@@ -224,16 +143,6 @@ class Events extends React.Component {
                             <span>Tennis</span>
                           </div>
                         </button>
-                      
-                      <UncontrolledTooltip
-                        delay={0}
-                        trigger="hover focus"
-                        target="tooltip742747005"
-                      >
-                        {this.state.copiedText === "atom"
-                          ? "Copied"
-                          : "Copy To Clipbord"}
-                      </UncontrolledTooltip>
                     </Col>
                     <Col lg="3" md="6">
                         <button
@@ -247,16 +156,6 @@ class Events extends React.Component {
                             <span>Randonnée</span>
                           </div>
                         </button>
-                      
-                      <UncontrolledTooltip
-                        delay={0}
-                        trigger="hover focus"
-                        target="tooltip488565068"
-                      >
-                        {this.state.copiedText === "badge"
-                          ? "Copied"
-                          : "Copy To Clipbord"}
-                      </UncontrolledTooltip>
                     </Col>
                     <Col lg="3" md="6">
                         <button
@@ -270,16 +169,6 @@ class Events extends React.Component {
                             <span>Soirée</span>
                           </div>
                         </button>
-                      
-                      <UncontrolledTooltip
-                        delay={0}
-                        trigger="hover focus"
-                        target="tooltip163626790"
-                      >
-                        {this.state.copiedText === "bag-17"
-                          ? "Copied"
-                          : "Copy To Clipbord"}
-                      </UncontrolledTooltip>
                     </Col>
                     <Col lg="3" md="6">
                         <button
@@ -293,16 +182,6 @@ class Events extends React.Component {
                             <span>Reveillon</span>
                           </div>
                         </button>
-                      
-                      <UncontrolledTooltip
-                        delay={0}
-                        trigger="hover focus"
-                        target="tooltip387253692"
-                      >
-                        {this.state.copiedText === "basket"
-                          ? "Copied"
-                          : "Copy To Clipbord"}
-                      </UncontrolledTooltip>
                     </Col>
                   </Row>
                 </CardBody>
