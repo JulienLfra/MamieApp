@@ -1,6 +1,7 @@
 import React from "react";
 // reactstrap components
 import {
+  Button,
   Card,
   CardHeader,
   CardBody,
@@ -23,8 +24,22 @@ class Events extends React.Component {
           <Row>
             <div className=" col">
               <Card className=" shadow">
-                <CardHeader className=" bg-transparent">
-                  <h3 className=" mb-0">Events</h3>
+                <CardHeader className="bg-transparent">
+                  <Row className="align-items-center">
+                    <Col xs="8">
+                      <h3 className="mb-0">My events</h3>
+                    </Col>
+                    <Col className="text-right" xs="4">
+                      <Button
+                        color="primary"
+                        href="#pablo"
+                        onClick={e => e.preventDefault()}
+                        size="sm"
+                      >
+                        Add an event
+                      </Button>
+                    </Col>
+                  </Row>
                 </CardHeader>
                 <CardBody>
                   <Row className=" icon-examples">
