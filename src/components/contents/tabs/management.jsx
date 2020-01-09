@@ -6,6 +6,13 @@ import {
   Button,
   Card,
   CardHeader,
+  CardBody,
+  Form,
+  FormGroup,
+  Input,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
   Media,
   Table,
   Container,
@@ -29,19 +36,19 @@ class Management extends React.Component {
               <Card className="bg-default shadow">
                 <CardHeader className="bg-transparent border-0">
                   <Row>
-                      <Col xs="8">
-                        <h3 className="text-white mb-0">My families</h3>
-                      </Col>
-                      <Col className="text-right" xs="4">
-                        <Button
-                          color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
-                          size="sm"
-                        >
-                          Add a family
-                        </Button>
-                      </Col>
+                    <Col xs="8">
+                      <h3 className="text-white mb-0">My families</h3>
+                    </Col>
+                    <Col className="text-right" xs="4">
+                      <Button
+                        color="primary"
+                        href="#pablo"
+                        onClick={e => e.preventDefault()}
+                        size="sm"
+                      >
+                        Add a family
+                      </Button>
+                    </Col>
                   </Row>
                 </CardHeader>
                 <Table
@@ -285,6 +292,54 @@ class Management extends React.Component {
                 </Table>
               </Card>
             </div>
+          </Row>
+          <Row className="mt-5">
+                <div className="col">
+                  <Card className="bg-default shadow">
+                    <CardHeader className="bg-transparent border-0">
+                      <Row className="align-items-center">
+                        <Col xs="8">
+                          <h3 className="text-white mb-0">Add a family</h3>
+                        </Col>
+                      </Row>
+                    </CardHeader>
+                    <CardBody>
+                      <Form>
+                        {/* Mettre le nom */}
+                        <h6 className="heading-small text-muted mb-4">
+                          Name:
+                        </h6>
+                        <div className="pl-lg-4">
+                          <Row>
+                            <Col md="3">
+                              <FormGroup className="mb-0">
+                                <InputGroup className="input-group-alternative">
+                                  <InputGroupAddon addonType="prepend">
+                                    <InputGroupText>
+                                    </InputGroupText>
+                                  </InputGroupAddon>
+                                  <Input placeholder="..." type="text" />
+                                </InputGroup>
+                              </FormGroup>
+                            </Col>
+                            <Col md="1">
+                            {/* bouton creation */}
+                              <Button 
+                                className="float-right"
+                                color="primary"
+                                href="#pablo"
+                                onClick={e => e.preventDefault()}
+                                size="sm"
+                              >
+                                Create
+                              </Button>
+                              </Col>
+                          </Row>
+                        </div>
+                      </Form>
+                    </CardBody>
+                  </Card> 
+              </div>
           </Row>
         </Container>
       </>

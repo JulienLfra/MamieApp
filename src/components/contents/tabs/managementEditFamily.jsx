@@ -180,7 +180,7 @@ class ManagementEditFamily extends React.Component {
                           </Row>
                         </div>
                         <hr className="my-4" />
-                        {/* recherche par mail */}
+                        {/* bouton invitation */}
                         <Button 
                           className="float-right"
                           color="primary"
