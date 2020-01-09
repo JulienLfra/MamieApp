@@ -2,7 +2,7 @@ import Family from "./components/contents/family.jsx";
 import Profile from "./components/contents/tabs/profile.jsx";
 import Events from "./components/contents/tabs/events.jsx";
 import Management from "./components/contents/tabs/management.jsx";
-import ManagementAddFamily from "./components/contents/tabs/managementAddFamily.jsx";
+import ManagementEditFamily from "./components/contents/tabs/managementEditFamily.jsx";
 
 
 
@@ -36,10 +36,10 @@ var routes = [
     layout: "/admin"
   },
   {
-    path: "/management-add-family",
-    name: "Add Family",
+    path: "/management-edit-family",
+    name: "Edit Family",
     icon: "ni ni-rocket text-yellow",
-    component: ManagementAddFamily,
+    component: ManagementEditFamily,
     layout: "/admin",
     invisible: true
   }

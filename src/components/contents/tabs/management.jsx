@@ -157,7 +157,7 @@ class Management extends React.Component {
                       </td>
                       <td className="align-items-center">
                         <Button
-                          to="../admin/management-add-family"
+                          to="../admin/management-edit-family"
                           tag={Link}
                           color="primary"
                         >
@@ -269,7 +269,7 @@ class Management extends React.Component {
                       </td>
                       <td className="align-items-center">
                         <Button
-                           to="../admin/management-add-family"
+                           to="../admin/management-edit-family"
                            tag={Link}
                            color="primary"
                         >

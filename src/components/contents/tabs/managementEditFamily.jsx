@@ -21,7 +21,7 @@ import {
 // core components
 import Header from "../../headers/header.jsx";
 
-class ManagementAddFamily extends React.Component {
+class ManagementEditFamily extends React.Component {
   render() {
     return (
       <>
@@ -201,4 +201,4 @@ class ManagementAddFamily extends React.Component {
   }
 }
 
-export default ManagementAddFamily;
+export default ManagementEditFamily;
