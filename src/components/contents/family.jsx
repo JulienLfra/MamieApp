@@ -31,7 +31,6 @@ class Family extends React.Component {
                   </Row>
                 </CardHeader>
                 <CardBody>
-                  {/* Chart */}
                   <div className="chart">
                     {/* TODO : Arbre généalogique*/}
                   </div>

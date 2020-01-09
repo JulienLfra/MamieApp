@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "../../../../node_modules/react-router-dom";
 
 // reactstrap components
 import {
@@ -59,16 +60,15 @@ class Management extends React.Component {
                     <tr>
                       <th scope="row">
                         <Media className="align-items-center">
-                          <a
+                          <span
                             className="avatar rounded-circle mr-3"
                             href="#pablo"
-                            onClick={e => e.preventDefault()}
                           >
                             <img
                               alt="..."
                               src={require("../../../assets/img/theme/icon-family.png")}
                             />
-                          </a>
+                          </span>
                           <Media>
                             <span className="mb-0 text-sm">
                               Bozon
@@ -157,9 +157,9 @@ class Management extends React.Component {
                       </td>
                       <td className="align-items-center">
                         <Button
+                          to="../admin/management-add-family"
+                          tag={Link}
                           color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
                         >
                           <img
                             alt="..."
@@ -172,16 +172,15 @@ class Management extends React.Component {
                     <tr>
                       <th scope="row">
                         <Media className="align-items-center">
-                          <a
+                          <span
                             className="avatar rounded-circle mr-3"
                             href="#pablo"
-                            onClick={e => e.preventDefault()}
                           >
                             <img
                               alt="..."
                               src={require("../../../assets/img/theme/icon-family.png")}
                             />
-                          </a>
+                          </span>
                           <Media>
                             <span className="mb-0 text-sm">
                               Ugnon
@@ -270,9 +269,9 @@ class Management extends React.Component {
                       </td>
                       <td className="align-items-center">
                         <Button
-                          color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
+                           to="../admin/management-add-family"
+                           tag={Link}
+                           color="primary"
                         >
                           <img
                             alt="..."

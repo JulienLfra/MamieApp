@@ -2,6 +2,8 @@ import Family from "./components/contents/family.jsx";
 import Profile from "./components/contents/tabs/profile.jsx";
 import Events from "./components/contents/tabs/events.jsx";
 import Management from "./components/contents/tabs/management.jsx";
+import ManagementAddFamily from "./components/contents/tabs/managementAddFamily.jsx";
+
 
 
 var routes = [
@@ -32,6 +34,14 @@ var routes = [
     icon: "ni ni-single-02 text-yellow",
     component: Profile,
     layout: "/admin"
+  },
+  {
+    path: "/management-add-family",
+    name: "Add Family",
+    icon: "ni ni-rocket text-yellow",
+    component: ManagementAddFamily,
+    layout: "/admin",
+    invisible: true
   }
 ];
 
