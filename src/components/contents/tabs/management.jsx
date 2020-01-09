@@ -9,6 +9,7 @@ import {
   Table,
   Container,
   Row,
+  Col,
   UncontrolledTooltip
 } from "reactstrap";
 // core components
@@ -26,7 +27,21 @@ class Management extends React.Component {
             <div className="col">
               <Card className="bg-default shadow">
                 <CardHeader className="bg-transparent border-0">
-                  <h3 className="text-white mb-0">My families</h3>
+                  <Row>
+                      <Col xs="8">
+                        <h3 className="text-white mb-0">My families</h3>
+                      </Col>
+                      <Col className="text-right" xs="4">
+                        <Button
+                          color="primary"
+                          href="#pablo"
+                          onClick={e => e.preventDefault()}
+                          size="sm"
+                        >
+                          Add a family
+                        </Button>
+                      </Col>
+                  </Row>
                 </CardHeader>
                 <Table
                   className="align-items-center table-dark table-flush"
@@ -142,7 +157,7 @@ class Management extends React.Component {
                       </td>
                       <td className="align-items-center">
                         <Button
-                          color="info"
+                          color="primary"
                           href="#pablo"
                           onClick={e => e.preventDefault()}
                         >
@@ -255,7 +270,7 @@ class Management extends React.Component {
                       </td>
                       <td className="align-items-center">
                         <Button
-                          color="info"
+                          color="primary"
                           href="#pablo"
                           onClick={e => e.preventDefault()}
                         >
