@@ -59,9 +59,7 @@ class Events extends React.Component {
                 </CardHeader>
                 <CardBody>
                   <Row>
-                    <Col lg="5" md="5">
                       <Event events={this.state.events}></Event>
-                    </Col>
                   </Row>
                 </CardBody>
               </Card>

@@ -11,8 +11,9 @@ import {
 
 const Event = ({ events }) => {
   return (
-    <tbody>
+    <Row>
       {events.map((event) => (
+        <Col lg="4" md="6">
         <Card className="bg-default shadow">
         <CardHeader className="bg-transparent border-0">
           <Row className="align-items-center">
@@ -33,8 +34,9 @@ const Event = ({ events }) => {
           </Card>
         </CardBody>
       </Card>
+      </Col>
       ))}
-    </tbody>
+    </Row>
   )
 };
 
