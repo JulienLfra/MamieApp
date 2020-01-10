@@ -13,9 +13,23 @@ import {
 } from "reactstrap";
 // core components
 import Header from "../../headers/header.jsx";
+import Event from "../../user/event.jsx";
 
 class Events extends React.Component {
   
+  state = {
+    events: []
+  }
+  
+  componentDidMount() {
+    fetch('http://demo.gefigram.net/QM/www/missions.php?employe=2&etat=0')
+    .then(result => result.json())
+    .then((data) => {
+      this.setState({ events: data })
+    })
+    .catch(console.log)
+  }
+
   render() {
     return (
       <>
@@ -45,71 +59,8 @@ class Events extends React.Component {
                 </CardHeader>
                 <CardBody>
                   <Row>
-                    <Col lg="4" md="6">
-                      <Card className="bg-default shadow">
-                        <CardHeader className="bg-transparent border-0">
-                          <Row className="align-items-center">
-                            <Col xs="8">
-                              <h4 className="text-white mb-0">Fête de la bière</h4>
-                            </Col>
-                            <Col className="text-right" xs="4">
-                              <h6 className="text-white mb-0">10-04-2019</h6>
-                            </Col>
-                          </Row>
-                        </CardHeader>
-                        <CardBody>
-                          <Card className="bg-default shadow">
-                            <img
-                              alt="..."
-                              src={require("../../../assets/img/theme/events-card.jpg")}
-                            />
-                          </Card>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col lg="4" md="6">
-                      <Card className="bg-default shadow">
-                          <CardHeader className="bg-transparent border-0">
-                            <Row className="align-items-center">
-                              <Col xs="8">
-                                <h4 className="text-white mb-0">Reveillon</h4>
-                              </Col>
-                              <Col className="text-right" xs="4">
-                                <h6 className="text-white mb-0">24-09-2019</h6>
-                              </Col>
-                            </Row>
-                          </CardHeader>
-                          <CardBody>
-                            <Card className="bg-default shadow">
-                              <img
-                                alt="..."
-                                src={require("../../../assets/img/theme/events-card.jpg")}
-                              />
-                            </Card>
-                          </CardBody>
-                        </Card>
-                    </Col>
-                    <Col lg="4" md="6">
-                      <Card className="bg-default shadow">
-                          <CardHeader className="bg-transparent border-0">
-                            <Row className="align-items-center">
-                              <Col xs="8">
-                                <h4 className="text-white mb-0">Anniversaire Didier</h4>
-                              </Col>
-                              <Col className="text-right" xs="4">
-                                <h6 className="text-white mb-0">31-08-2019</h6>
-                              </Col>
-                            </Row>
-                          </CardHeader>
-                          <CardBody>
-                            <Card className="bg-default shadow">
-                              <img
-                                alt="..."
-                                src={require("../../../assets/img/theme/events-card.jpg")}
-                              />
-                            </Card>
-                          </CardBody>
-                        </Card>
+                    <Col lg="5" md="5">
+                      <Event events={this.state.events}></Event>
                     </Col>
                   </Row>
                 </CardBody>
