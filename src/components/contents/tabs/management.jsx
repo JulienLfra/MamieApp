@@ -24,6 +24,16 @@ import {
 import Header from "../../headers/header.jsx";
 
 class Management extends React.Component {
+
+hideShow = (e) =>{
+ var cardAddFamily = document.getElementById('cardAddFamily');
+ 
+  if (cardAddFamily.style.display === 'none')
+    cardAddFamily.style.display = 'block';
+  else
+    cardAddFamily.style.display = 'none';
+};
+
   render() {
     return (
       <>
@@ -43,7 +53,7 @@ class Management extends React.Component {
                       <Button
                         color="primary"
                         href="#pablo"
-                        onClick={e => e.preventDefault()}
+                        onClick={e => this.hideShow(e)}
                         size="sm"
                       >
                         Add a family
@@ -294,7 +304,7 @@ class Management extends React.Component {
             </div>
           </Row>
           <Row className="mt-5">
-                <div className="col">
+                <div className="col" id="cardAddFamily" style={{display:"none"}}>
                   <Card className="bg-default shadow">
                     <CardHeader className="bg-transparent border-0">
                       <Row className="align-items-center">

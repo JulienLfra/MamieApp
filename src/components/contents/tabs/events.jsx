@@ -13,7 +13,7 @@ import {
 import Header from "../../headers/header.jsx";
 
 class Events extends React.Component {
-  state = {};
+  
   render() {
     return (
       <>
