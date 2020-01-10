@@ -3,8 +3,8 @@ import Profile from "./components/contents/tabs/profile.jsx";
 import Events from "./components/contents/tabs/events.jsx";
 import Management from "./components/contents/tabs/management.jsx";
 import ManagementEditFamily from "./components/contents/tabs/managementEditFamily.jsx";
-
-
+import EventsAddEvent from "./components/contents/tabs/eventsAddEvent.jsx";
+import EventsEditEvent from "./components/contents/tabs/eventsEditEvent.jsx";
 
 var routes = [
   {
@@ -40,6 +40,22 @@ var routes = [
     name: "Edit Family",
     icon: "ni ni-rocket text-yellow",
     component: ManagementEditFamily,
+    layout: "/admin",
+    invisible: true
+  },
+  {
+    path: "/events-add-event",
+    name: "Add Event",
+    icon: "ni ni-rocket text-yellow",
+    component: EventsAddEvent,
+    layout: "/admin",
+    invisible: true
+  },
+  {
+    path: "/events-edit-event",
+    name: "Edit Event",
+    icon: "ni ni-rocket text-yellow",
+    component: EventsEditEvent,
     layout: "/admin",
     invisible: true
   }

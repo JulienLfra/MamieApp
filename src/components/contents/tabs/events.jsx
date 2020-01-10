@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "../../../../node_modules/react-router-dom";
+
 // reactstrap components
 import {
   Button,
@@ -32,8 +34,8 @@ class Events extends React.Component {
                     <Col className="text-right" xs="4">
                       <Button
                         color="primary"
-                        href="#pablo"
-                        onClick={e => e.preventDefault()}
+                        to="../admin/events-add-event"
+                        tag={Link}
                         size="sm"
                       >
                         Add an event

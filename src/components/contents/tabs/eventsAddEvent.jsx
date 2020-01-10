@@ -6,7 +6,6 @@ import {
   Card,
   CardBody,
   CardHeader,
-  Table,
   Container,
   Row,
   Col,
@@ -19,67 +18,29 @@ import {
 } from "reactstrap";
 // core components
 import Header from "../../headers/header.jsx";
-import Member from "../../user/member.jsx"
 
-class ManagementEditFamily extends React.Component {
- 
-  state = {
-    members: []
-  }
-
-  componentDidMount() {
-    fetch('http://demo.gefigram.net/QM/www/missions.php?employe=2&etat=0')
-    .then(result => result.json())
-    .then((data) => {
-      this.setState({ members: data })
-    })
-    .catch(console.log)
-  }
-  
+class EventsAddEvent extends React.Component {
   render() {
     return (
       <>
         <Header />
         {/* Page content */}
         <Container className="mt--7" fluid>
-          {/* Table */}
-          <Row className="mt-5">
-            <div className="col">
-              <Card className="bg-default shadow">
-                <CardHeader className="bg-transparent border-0">
-                  <h3 className="text-white mb-0">Members</h3>
-                </CardHeader>
-                <Table
-                  className="align-items-center table-dark table-flush"
-                  responsive
-                >
-                  <thead className="thead-dark">
-                    <tr>
-                      <th scope="col">Name</th>
-                      <th scope="col">Age</th>
-                      <th scope="col">Delete</th>
-                    </tr>
-                  </thead>
-                  <Member members={this.state.members}></Member>
-                </Table>
-              </Card>
-              </div>
-              </Row>
-              <Row className="mt-5">
+        <Row className="mt-5">
                 <div className="col">
                   <Card className="bg-default shadow">
                     <CardHeader className="bg-transparent border-0">
                       <Row className="align-items-center">
                         <Col xs="8">
-                          <h3 className="text-white mb-0">Add members</h3>
+                          <h3 className="text-white mb-0">Add an event</h3>
                         </Col>
                       </Row>
                     </CardHeader>
                     <CardBody>
                       <Form>
-                        {/* recherche par nom */}
+                        {/* Nom de l'evenement */}
                         <h6 className="heading-small text-muted mb-4">
-                          By name:
+                            Name:
                         </h6>
                         <div className="pl-lg-4">
                           <Row>
@@ -88,19 +49,18 @@ class ManagementEditFamily extends React.Component {
                                 <InputGroup className="input-group-alternative">
                                   <InputGroupAddon addonType="prepend">
                                     <InputGroupText>
-                                      <i className="fas fa-search" />
                                     </InputGroupText>
                                   </InputGroupAddon>
-                                  <Input placeholder="Search..." type="text" />
+                                  <Input placeholder="..." type="text" />
                                 </InputGroup>
                               </FormGroup>
                             </Col>
                           </Row>
                         </div>
                         <hr className="my-4" />
-                        {/* recherche par mail */}
+                        {/* Date de l'evenement */}
                         <h6 className="heading-small text-muted mb-4">
-                          By e-mail:
+                          Date : 
                         </h6>
                         <div className="pl-lg-4">
                           <Row>
@@ -109,11 +69,44 @@ class ManagementEditFamily extends React.Component {
                                   <InputGroup className="input-group-alternative">
                                     <InputGroupAddon addonType="prepend">
                                       <InputGroupText>
-                                        <i className="fas fa-search" />
                                       </InputGroupText>
                                     </InputGroupAddon>
-                                    <Input placeholder="Search..." type="text" />
+                                    <Input placeholder="Format: XX-XX-XXXX" type="text" />
                                   </InputGroup>
+                                </FormGroup>
+                            </Col>
+                          </Row>
+                        </div>
+                        <hr className="my-4" />
+                        {/* Lieu de l'evenement */}
+                        <h6 className="heading-small text-muted mb-4">
+                          Lieu : 
+                        </h6>
+                        <div className="pl-lg-4">
+                          <Row>
+                            <Col md="12">
+                              <FormGroup className="mb-0">
+                                  <InputGroup className="input-group-alternative">
+                                    <InputGroupAddon addonType="prepend">
+                                      <InputGroupText>
+                                      </InputGroupText>
+                                    </InputGroupAddon>
+                                    <Input placeholder="..." type="text" />
+                                  </InputGroup>
+                                </FormGroup>
+                            </Col>
+                          </Row>
+                        </div>
+                        <hr className="my-4" />
+                        {/* Photo de l'evenement */}
+                        <h6 className="heading-small text-muted mb-4">
+                          Photo : 
+                        </h6>
+                        <div className="pl-lg-4">
+                          <Row>
+                            <Col md="12">
+                              <FormGroup className="mb-0">
+                                  <Input type="file" name="file" id="eventPicture" />
                                 </FormGroup>
                             </Col>
                           </Row>
@@ -127,7 +120,7 @@ class ManagementEditFamily extends React.Component {
                           onClick={e => e.preventDefault()}
                           size="sm"
                         >
-                          Send invitation
+                          Create event
                         </Button>
                       </Form>
                     </CardBody>
@@ -140,4 +133,4 @@ class ManagementEditFamily extends React.Component {
   }
 }
 
-export default ManagementEditFamily;
+export default EventsAddEvent;
