@@ -22,6 +22,20 @@ import {
 import Header from "../../headers/header.jsx";
 
 class ManagementEditFamily extends React.Component {
+ 
+  state = {
+    contacts: []
+  }
+
+  componentDidMount() {
+    fetch('http://jsonplaceholder.typicode.com/users')
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({ contacts: data })
+    })
+    .catch(console.log)
+  }
+  
   render() {
     return (
       <>
@@ -68,7 +82,7 @@ class ManagementEditFamily extends React.Component {
                         </Media>
                       </th>
                       <td>
-                        <p>21 ans</p>
+                        <p>{this.state.contacts[0].age}</p>
                       </td>
                       <td className="align-items-center">
                         <Button
