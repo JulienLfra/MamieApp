@@ -52,7 +52,7 @@ var routes = [
     invisible: true
   },
   {
-    path: "/events-edit-event",
+    path: "/events-edit-event/:event_id",
     name: "Edit Event",
     icon: "ni ni-rocket text-yellow",
     component: EventsEditEvent,
