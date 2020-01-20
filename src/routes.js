@@ -36,7 +36,7 @@ var routes = [
     layout: "/admin"
   },
   {
-    path: "/management-edit-family",
+    path: "/management-edit-family/:family_id",
     name: "Edit Family",
     icon: "ni ni-rocket text-yellow",
     component: ManagementEditFamily,

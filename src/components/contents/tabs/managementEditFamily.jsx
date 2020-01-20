@@ -28,7 +28,10 @@ class ManagementEditFamily extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://demo.gefigram.net/QM/www/missions.php?employe=2&etat=0')
+
+    const { family_id } = this.props.match.params
+
+    fetch(`http://benjamin.molinet.free.fr/projetMamie/getUsersByFamily${family_id}.php`)
     .then(result => result.json())
     .then((data) => {
       this.setState({ members: data })

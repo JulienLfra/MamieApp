@@ -6,6 +6,8 @@ import {
     Media
   } from "reactstrap";
 
+  
+
 const Member = ({ members }) => {
   return (
     <tbody>
@@ -20,18 +22,18 @@ const Member = ({ members }) => {
               >
                 <img
                   alt="..."
-                  src={require("../../assets/img/theme/member1.jpg")}
+                  src={member.user_thumbnail}
                 />
               </a>
               <Media>
                 <span className="mb-0 text-sm">
-                  {member.nom_mission}
+                  {member.user_name + " " + member.user_firstname}
                 </span>
               </Media>
             </Media>
           </th>
           <td>
-            <p>{member.id_mission}</p>
+            <p>{member.user_birthday}</p>
           </td>
           <td className="align-items-center">
             <Button

@@ -26,13 +26,13 @@ const Family = ({ families }) => {
              </span>
              <Media>
                <span className="mb-0 text-sm">
-                {family.nom_mission}
+                {family.family_name}
                </span>
              </Media>
            </Media>
          </th>
          <td>
-           <p>{family.id_mission}</p>
+           <p>{family.family_number}</p>
          </td>
          <td>
            <div className="avatar-group">
@@ -112,7 +112,7 @@ const Family = ({ families }) => {
          </td>
          <td className="align-items-center">
            <Button
-             to="../admin/management-edit-family"
+             to={"../admin/management-edit-family/" + family.family_id}
              tag={Link}
              color="primary"
            >
