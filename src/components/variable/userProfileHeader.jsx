@@ -4,8 +4,7 @@ import React from 'react'
 import {
   Row,
   Col,
-  Container,
-  Button
+  Container
   } from "reactstrap";
 
 const UserProfileHeader = ({ users }) => {
@@ -18,13 +17,6 @@ const UserProfileHeader = ({ users }) => {
             <p className="text-white mt-0 mb-5">
               This is your profile page. You can see all your information and manage them here !
             </p>
-            <Button
-              color="info"
-              href="#pablo"
-              onClick={e => e.preventDefault()}
-            >
-              Edit profile
-            </Button>
           </Col>
         </Row>
       ))}

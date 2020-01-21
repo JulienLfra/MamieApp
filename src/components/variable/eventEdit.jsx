@@ -34,7 +34,7 @@ const EventEdit = ({ events }) => {
            <Form>
              {/* Nom de l'evenement */}
              <h6 className="heading-small text-muted mb-4">
-                 {event.family_name}
+                 Name : 
              </h6>
              <div className="pl-lg-4">
                <Row>
@@ -45,7 +45,7 @@ const EventEdit = ({ events }) => {
                          <InputGroupText>
                          </InputGroupText>
                        </InputGroupAddon>
-                       <Input placeholder="..." type="text" />
+                       <Input placeholder="..." type="text" defaultValue={event.family_name} />
                      </InputGroup>
                    </FormGroup>
                  </Col>
