@@ -2,7 +2,7 @@ import React from "react";
 
 // core components
 import UserHeader from "../../headers/profileHeader.jsx";
-import User from "../../user/user.jsx";
+import User from "../../variable/user.jsx";
 
 class Profile extends React.Component {
 
@@ -11,7 +11,7 @@ class Profile extends React.Component {
   }
   
   componentDidMount() {
-    fetch('http://demo.gefigram.net/QM/www/clients.php?id_client=102')
+    fetch('http://192.168.43.228:5000/personne?nom=Plaideau&prenom=Guillaume')
     .then(result => result.json())
     .then((data) => {
       this.setState({ users: data })

@@ -13,7 +13,7 @@ import {
 } from "reactstrap";
 // core components
 import Header from "../../headers/header.jsx";
-import Event from "../../user/event.jsx";
+import Event from "../../variable/event.jsx";
 
 class Events extends React.Component {
   

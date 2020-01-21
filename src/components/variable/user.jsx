@@ -26,7 +26,7 @@ const User = ({ users }) => {
                   <img
                     alt="..."
                     className="rounded-circle"
-                    src={require("../../assets/img/theme/ppf.jpg")}
+                    src={user.photo}
                   />
               </div>
             </Col>
@@ -45,24 +45,24 @@ const User = ({ users }) => {
             </Row>
             <div className="text-center">
               <h3>
-               {user.nom_client}
-                <span className="font-weight-light">, 22</span>
+                {user.nom + " " + user.prenom}
+                <span className="font-weight-light">, {user.age}</span>
               </h3>
               <div className="h5 font-weight-300">
                 <i className="ni location_pin mr-2" />
-                Lyon, France
+                {user.ville}, {user.pays}
               </div>
               <div className="h5 mt-4">
                 <i className="ni business_briefcase-24 mr-2" />
-                java engineer
+                {user.profession}
               </div>
               <div>
                 <i className="ni education_hat mr-2" />
-                University of Computer Science
+                {user.diplome}
               </div>
               <hr className="my-4" />
               <p>
-                J'aime faire du tennis et sortir avec mes potes
+                {user.statut}
               </p>
             </div>
           </CardBody>
@@ -94,7 +94,7 @@ const User = ({ users }) => {
                       </label>
                       <Input
                         className="form-control-alternative"
-                        defaultValue="GuiguiLeDieu"
+                        defaultValue=""
                         id="input-username"
                         placeholder="Username"
                         type="text"
@@ -112,7 +112,7 @@ const User = ({ users }) => {
                       <Input
                         className="form-control-alternative"
                         id="input-email"
-                        placeholder={user.mail_client}
+                        placeholder={user.mail}
                         type="email"
                       />
                     </FormGroup>
@@ -129,7 +129,7 @@ const User = ({ users }) => {
                       </label>
                       <Input
                         className="form-control-alternative"
-                        defaultValue="Guillaume"
+                        defaultValue={user.prenom}
                         id="input-first-name"
                         placeholder="First name"
                         type="text"
@@ -146,7 +146,7 @@ const User = ({ users }) => {
                       </label>
                       <Input
                         className="form-control-alternative"
-                        defaultValue="Bozon"
+                        defaultValue={user.nom}
                         id="input-last-name"
                         placeholder="Last name"
                         type="text"
@@ -172,7 +172,7 @@ const User = ({ users }) => {
                       </label>
                       <Input
                         className="form-control-alternative"
-                        defaultValue={user.adresse_client}
+                        defaultValue=""
                         id="input-address"
                         placeholder="Home Address"
                         type="text"
@@ -191,7 +191,7 @@ const User = ({ users }) => {
                       </label>
                       <Input
                         className="form-control-alternative"
-                        defaultValue="Lyon"
+                        defaultValue={user.ville}
                         id="input-city"
                         placeholder="City"
                         type="text"
@@ -203,12 +203,12 @@ const User = ({ users }) => {
                       <label
                         className="form-control-label"
                         htmlFor="input-country"
-                      >
+                   adresse_client   >
                         Country
                       </label>
                       <Input
                         className="form-control-alternative"
-                        defaultValue="France"
+                        defaultValue={user.pays}
                         id="input-country"
                         placeholder="Country"
                         type="text"
@@ -243,7 +243,7 @@ const User = ({ users }) => {
                     className="form-control-alternative"
                     placeholder="A few words about you ..."
                     rows="4"
-                    defaultValue={user.commentaire_client}
+                    defaultValue={user.statut}
                     type="textarea"
                   />
                 </FormGroup>

@@ -26,13 +26,13 @@ const Family = ({ families }) => {
              </span>
              <Media>
                <span className="mb-0 text-sm">
-                {family.family_name}
+                {family.nom}
                </span>
              </Media>
            </Media>
          </th>
          <td>
-           <p>{family.family_number}</p>
+           <p>{family.nombreMembre}</p>
          </td>
          <td>
            <div className="avatar-group">
@@ -112,7 +112,7 @@ const Family = ({ families }) => {
          </td>
          <td className="align-items-center">
            <Button
-             to={"../admin/management-edit-family/" + family.family_id}
+             to={"../admin/management-edit-family/" + family.id}
              tag={Link}
              color="primary"
            >
@@ -123,6 +123,19 @@ const Family = ({ families }) => {
              />
            </Button>
          </td>
+         <td className="align-items-center">
+            <Button
+              color="gray dark"
+              href="#pablo"
+              onClick={e => e.preventDefault()}
+            >
+              <img
+                alt="..."
+                className="rounded-circle"
+                src={require("../../assets/img/theme/icon-delete.png")}
+              />
+            </Button>
+          </td>
        </tr>
       ))}
     </tbody>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "../../../../node_modules/react-router-dom";
 
 // reactstrap components
 import {
@@ -19,7 +20,7 @@ import {
 } from "reactstrap";
 // core components
 import Header from "../../headers/header.jsx";
-import Member from "../../user/member.jsx"
+import Member from "../../variable/member.jsx"
 
 class ManagementEditFamily extends React.Component {
  
@@ -133,6 +134,16 @@ class ManagementEditFamily extends React.Component {
                           Send invitation
                         </Button>
                       </Form>
+                      <Button 
+                          className="float-left"
+                          to="../management"
+                          tag={Link}
+                          color="primary"
+                          href="#pablo"     
+                          size="sm"
+                        >
+                          back to families
+                      </Button>
                     </CardBody>
                   </Card> 
               </div>

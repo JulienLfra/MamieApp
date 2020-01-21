@@ -19,7 +19,7 @@ import {
 } from "reactstrap";
 // core components
 import Header from "../../headers/header.jsx";
-import Family from "../../user/family.jsx";
+import Family from "../../variable/family.jsx";
 
 class Management extends React.Component {
 
@@ -28,7 +28,7 @@ state = {
 }
 
 componentDidMount() {
-  fetch('http://benjamin.molinet.free.fr/projetMamie/getFamilies.php')
+  fetch('http://192.168.43.228:5000/familles')
   .then(result => result.json())
   .then((data) => {
     this.setState({ families: data })
@@ -82,6 +82,7 @@ hideShow = (e) =>{
                       <th scope="col">Number</th>
                       <th scope="col">Members</th>
                       <th scope="col">Edit</th>
+                      <th scope="col">Delete</th>
                     </tr>
                   </thead>
                     <Family families={this.state.families}></Family>

@@ -7,7 +7,7 @@ import {
 } from "reactstrap";
 // core components
 import Header from "../../headers/header.jsx";
-import EventEdit from "../../user/eventEdit.jsx"
+import EventEdit from "../../variable/eventEdit.jsx"
 
 class EventsEditEvent extends React.Component {
 

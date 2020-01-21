@@ -1,9 +1,22 @@
 import React from "react";
 
-// reactstrap components
-import { Button, Container, Row, Col } from "reactstrap";
+import UserProfileHeader from "../variable/userProfileHeader.jsx";
 
 class ProfileHeader extends React.Component {
+
+  state = {
+    users: []
+  }
+  
+  componentDidMount() {
+    fetch('http://192.168.43.228:5000/personne?nom=Plaideau&prenom=Guillaume')
+    .then(result => result.json())
+    .then((data) => {
+      this.setState({ users: data })
+    })
+    .catch(console.log)
+  }
+
   render() {
     return (
       <>
@@ -19,24 +32,7 @@ class ProfileHeader extends React.Component {
         >
           {/* Mask */}
           <span className="mask bg-gradient-default opacity-8" />
-          {/* Header container */}
-          <Container className="d-flex align-items-center" fluid>
-            <Row>
-              <Col lg="7" md="10">
-                <h1 className="display-2 text-white">Hello Guillaume</h1>
-                <p className="text-white mt-0 mb-5">
-                  This is your profile page. You can see all your information and manage them here !
-                </p>
-                <Button
-                  color="info"
-                  href="#pablo"
-                  onClick={e => e.preventDefault()}
-                >
-                  Edit profile
-                </Button>
-              </Col>
-            </Row>
-          </Container>
+            <UserProfileHeader users={this.state.users}></UserProfileHeader>
         </div>
       </>
     );

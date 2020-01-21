@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "../../../../node_modules/react-router-dom";
 
 // reactstrap components
 import {
@@ -123,6 +124,17 @@ class EventsAddEvent extends React.Component {
                           Create event
                         </Button>
                       </Form>
+                      {/* bouton back */}
+                      <Button 
+                          className="float-left"
+                          to="../admin/events"
+                          tag={Link}
+                          color="primary"
+                          href="#pablo"     
+                          size="sm"
+                        >
+                          back to events
+                      </Button>
                     </CardBody>
                   </Card> 
               </div>
