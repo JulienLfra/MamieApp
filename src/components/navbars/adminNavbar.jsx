@@ -1,11 +1,7 @@
 import React from "../../../node_modules/react";
-import { Link } from "../../../node_modules/react-router-dom";
+
 // reactstrap components
 import {
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  DropdownToggle,
   Form,
   FormGroup,
   InputGroupAddon,
@@ -13,13 +9,28 @@ import {
   Input,
   InputGroup,
   Navbar,
-  Nav,
   Container,
-  Media
 } from "../../../node_modules/reactstrap";
 
+import UserNav from "../user/userNav.jsx";
+
 class AdminNavbar extends React.Component {
+
+  state = {
+    users: []
+  }
+  
+  componentDidMount() {
+    fetch('http://192.168.43.228:5000/personne?lastName=Molinet&firstName=Benjamin')
+    .then(result => result.json())
+    .then((data) => {
+      this.setState({ users: data })
+    })
+    .catch(console.log)
+  }
+
   render() {
+    console.log(this.state.users);
     return (
       <>
         <Navbar className="navbar-top navbar-dark" expand="md" id="navbar-main">
@@ -39,39 +50,7 @@ class AdminNavbar extends React.Component {
                 </InputGroup>
               </FormGroup>
             </Form>
-            <Nav className="align-items-center d-none d-md-flex" navbar>
-              <UncontrolledDropdown nav>
-                <DropdownToggle className="pr-0" nav>
-                  <Media className="align-items-center">
-                    <span className="avatar avatar-sm rounded-circle">
-                      <img
-                        alt="..."
-                        src={require("../../assets/img/theme/ppf.jpg")}
-                      />
-                    </span>
-                    <Media className="ml-2 d-none d-lg-block">
-                      <span className="mb-0 text-sm font-weight-bold">
-                          Guillaume Bozon
-                      </span>
-                    </Media>
-                  </Media>
-                </DropdownToggle>
-                <DropdownMenu className="dropdown-menu-arrow" right>
-                  <DropdownItem className="noti-title" header tag="div">
-                    <h6 className="text-overflow m-0">Welcome!</h6>
-                  </DropdownItem>
-                  <DropdownItem to="/admin/user-profile" tag={Link}>
-                    <i className="ni ni-single-02" />
-                    <span>My profile</span>
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                    <i className="ni ni-user-run" />
-                    <span>Logout</span>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            </Nav>
+            <UserNav users={this.state.users}></UserNav>
           </Container>
         </Navbar>
       </>
