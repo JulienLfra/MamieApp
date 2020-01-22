@@ -24,11 +24,13 @@ import Family from "../../variable/family.jsx";
 class Management extends React.Component {
 
 state = {
-  families: []
+  families: [],
+  nameFamily:"", 
+  numberFamily: 0
 }
 
 componentDidMount() {
-  fetch('http://192.168.43.228:5000/familles')
+  fetch('http://35.180.28.149:5000/familles')
   .then(result => result.json())
   .then((data) => {
     this.setState({ families: data })
@@ -44,6 +46,29 @@ hideShow = (e) =>{
   else
     cardAddFamily.style.display = 'none';
 };
+
+handleChange = event =>{
+  this.setState({ [event.target.name]:event.target.value })
+}
+  
+handleSubmit = event =>{
+  event.preventDefault();
+  console.log("Family name : " + this.state.nameFamily)
+  console.log("Family number : " + this.state.numberFamily)
+  const url ="http://35.180.28.149:5000/famille"
+  const data = { nom:this.state.nameFamily, nombreMembre:this.state.numberFamily }
+  
+  fetch(url, { 
+    method: 'POST', // or ‘PUT’
+    body: JSON.stringify(data), // data can be `string` or {object}!
+    headers:{ 'Content-Type': 'application/json' } })
+      .then(res => res.json())
+        .catch(error => console.error('Error:', error))
+          .then(response => console.log('Success:', response)); 
+
+    setTimeout(() => { document.location.reload(true); }, 1000);
+    
+}
 
   render() {
     return (
@@ -101,7 +126,7 @@ hideShow = (e) =>{
                       </Row>
                     </CardHeader>
                     <CardBody>
-                      <Form>
+                      <Form onSubmit={this.handleSubmit}>
                         {/* Mettre le nom */}
                         <h6 className="heading-small text-muted mb-4">
                           Name:
@@ -115,17 +140,17 @@ hideShow = (e) =>{
                                     <InputGroupText>
                                     </InputGroupText>
                                   </InputGroupAddon>
-                                  <Input placeholder="..." type="text" />
+                                  <Input placeholder="..." type="text" name="nameFamily" onChange={this.handleChange} />
                                 </InputGroup>
                               </FormGroup>
                             </Col>
                             <Col md="1">
                             {/* bouton creation */}
                               <Button 
+                                type="submit"
+                                value="Add user"
                                 className="float-right"
                                 color="primary"
-                                href="#pablo"
-                                onClick={e => e.preventDefault()}
                                 size="sm"
                               >
                                 Create

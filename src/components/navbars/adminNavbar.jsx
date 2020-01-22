@@ -21,7 +21,7 @@ class AdminNavbar extends React.Component {
   }
   
   componentDidMount() {
-    fetch('http://192.168.43.228:5000/personne?nom=Plaideau&prenom=Guillaume')
+    fetch('http://35.180.28.149:5000/personne?nom=Plaideau&prenom=Guillaume')
     .then(result => result.json())
     .then((data) => {
       this.setState({ users: data })
@@ -30,7 +30,6 @@ class AdminNavbar extends React.Component {
   }
 
   render() {
-    console.log(this.state.users);
     return (
       <>
         <Navbar className="navbar-top navbar-dark" expand="md" id="navbar-main">
