@@ -14,6 +14,7 @@ import {
 // core components
 import Header from "../../headers/header.jsx";
 import Event from "../../variable/event.jsx";
+import Const from "../../../const.js";
 
 class Events extends React.Component {
   
@@ -22,7 +23,7 @@ class Events extends React.Component {
   }
   
   componentDidMount() {
-    fetch('http://demo.gefigram.net/QM/www/missions.php?employe=2&etat=0')
+    fetch(Const.webpoint_list_event)
     .then(result => result.json())
     .then((data) => {
       this.setState({ events: data })
@@ -43,7 +44,7 @@ class Events extends React.Component {
                 <CardHeader className="bg-transparent">
                   <Row>
                     <Col xs="8">
-                      <h3 className="mb-0">My events</h3>
+                      <h3 className="mb-0">Mes événements</h3>
                     </Col>
                     <Col className="text-right" xs="4">
                       <Button
@@ -52,7 +53,7 @@ class Events extends React.Component {
                         tag={Link}
                         size="sm"
                       >
-                        Add an event
+                        Ajouter un événement
                       </Button>
                     </Col>
                   </Row>

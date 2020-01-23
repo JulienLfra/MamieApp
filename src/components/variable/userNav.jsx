@@ -33,16 +33,16 @@ const UserNav = ({ users }) => {
           </DropdownToggle>
           <DropdownMenu className="dropdown-menu-arrow" right>
             <DropdownItem className="noti-title" header tag="div">
-              <h6 className="text-overflow m-0">Welcome!</h6>
+              <h6 className="text-overflow m-0">Bonjour!</h6>
             </DropdownItem>
             <DropdownItem to="/admin/user-profile" tag={Link}>
               <i className="ni ni-single-02" />
-              <span>My profile</span>
+              <span>Mon profil</span>
             </DropdownItem>
             <DropdownItem divider />
             <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
               <i className="ni ni-user-run" />
-              <span>Logout</span>
+              <span>Déconnexion</span>
             </DropdownItem>
           </DropdownMenu>
         </UncontrolledDropdown>

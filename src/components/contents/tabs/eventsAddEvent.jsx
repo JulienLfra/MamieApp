@@ -21,6 +21,39 @@ import {
 import Header from "../../headers/header.jsx";
 
 class EventsAddEvent extends React.Component {
+
+  state = {
+    nameEvent:"", 
+    dateEvent: "",
+    lieuEvent:"",
+    picEvent:null
+  }
+
+  handleChange = event =>{
+    this.setState({ [event.target.name]:event.target.value })
+  }
+    
+  handleSubmit = event =>{
+    event.preventDefault();
+    console.log("Event name : " + this.state.nameEvent)
+    console.log("Event date : " + this.state.dateEvent)
+    console.log("Event lieu : " + this.state.lieuEvent)
+    console.log("Event picture : " + this.state.picEvent)
+    const url ="http://35.180.28.149:5000//evenement"
+    const data = { nom:this.state.nameEvent, date:this.state.dateEvent, lieu:this.state.lieuEvent, photo:this.state.picEvent }
+    
+    fetch(url, { 
+      method: 'POST', // or ‘PUT’
+      body: JSON.stringify(data), // data can be `string` or {object}!
+      headers:{ 'Content-Type': 'application/json' } })
+        .then(res => res.json())
+          .catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', response)); 
+  
+      //setTimeout(() => { document.location.reload(true); }, 1000);
+      
+  }
+
   render() {
     return (
       <>
@@ -33,15 +66,15 @@ class EventsAddEvent extends React.Component {
                     <CardHeader className="bg-transparent border-0">
                       <Row className="align-items-center">
                         <Col xs="8">
-                          <h3 className="text-white mb-0">Add an event</h3>
+                          <h3 className="text-white mb-0">Ajouter un événement</h3>
                         </Col>
                       </Row>
                     </CardHeader>
                     <CardBody>
-                      <Form>
+                      <Form onSubmit={this.handleSubmit}>
                         {/* Nom de l'evenement */}
                         <h6 className="heading-small text-muted mb-4">
-                            Name:
+                            Nom:
                         </h6>
                         <div className="pl-lg-4">
                           <Row>
@@ -52,7 +85,7 @@ class EventsAddEvent extends React.Component {
                                     <InputGroupText>
                                     </InputGroupText>
                                   </InputGroupAddon>
-                                  <Input placeholder="..." type="text" />
+                                  <Input placeholder="..." type="text" name="nameEvent" onChange={this.handleChange} />
                                 </InputGroup>
                               </FormGroup>
                             </Col>
@@ -72,7 +105,7 @@ class EventsAddEvent extends React.Component {
                                       <InputGroupText>
                                       </InputGroupText>
                                     </InputGroupAddon>
-                                    <Input placeholder="Format: XX-XX-XXXX" type="text" />
+                                    <Input placeholder="Format: XX-XX-XXXX" type="text" name="dateEvent" onChange={this.handleChange} />
                                   </InputGroup>
                                 </FormGroup>
                             </Col>
@@ -92,7 +125,7 @@ class EventsAddEvent extends React.Component {
                                       <InputGroupText>
                                       </InputGroupText>
                                     </InputGroupAddon>
-                                    <Input placeholder="..." type="text" />
+                                    <Input placeholder="..." type="text" name="lieuEvent" onChange={this.handleChange} />
                                   </InputGroup>
                                 </FormGroup>
                             </Col>
@@ -107,7 +140,7 @@ class EventsAddEvent extends React.Component {
                           <Row>
                             <Col md="12">
                               <FormGroup className="mb-0">
-                                  <Input type="file" name="file" id="eventPicture" />
+                                  <Input type="file" name="picEvent" onChange={this.handleChange} />
                                 </FormGroup>
                             </Col>
                           </Row>
@@ -115,13 +148,13 @@ class EventsAddEvent extends React.Component {
                         <hr className="my-4" />
                         {/* bouton invitation */}
                         <Button 
+                          type="submit"
+                          value="Add an event"
                           className="float-right"
                           color="primary"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
                           size="sm"
                         >
-                          Create event
+                          Créer un événement
                         </Button>
                       </Form>
                       {/* bouton back */}
@@ -133,7 +166,7 @@ class EventsAddEvent extends React.Component {
                           href="#pablo"     
                           size="sm"
                         >
-                          back to events
+                          retour aux événements
                       </Button>
                     </CardBody>
                   </Card> 

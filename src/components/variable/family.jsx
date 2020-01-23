@@ -4,8 +4,7 @@ import { Link } from "../../../node_modules/react-router-dom";
 // reactstrap components
 import {
     Button,
-    Media,
-    UncontrolledTooltip
+    Media
   } from "reactstrap";
 
 const Family = ({ families }) => {
@@ -34,85 +33,9 @@ const Family = ({ families }) => {
          <td>
            <p>{family.nombreMembre}</p>
          </td>
-         <td>
-           <div className="avatar-group">
-             <a
-               className="avatar avatar-sm"
-               href="#pablo"
-               id="tooltip731399078"
-               onClick={e => e.preventDefault()}
-             >
-               <img
-                 alt="..."
-                 className="rounded-circle"
-                 src={require("../../assets/img/theme/member1.jpg")}
-               />
-             </a>
-             <UncontrolledTooltip
-               delay={0}
-               target="tooltip731399078"
-             >
-               Ryan Bozon
-             </UncontrolledTooltip>
-             <a
-               className="avatar avatar-sm"
-               href="#pablo"
-               id="tooltip491083084"
-               onClick={e => e.preventDefault()}
-             >
-               <img
-                 alt="..."
-                 className="rounded-circle"
-                 src={require("../../assets/img/theme/member2.jpg")}
-               />
-             </a>
-             <UncontrolledTooltip
-               delay={0}
-               target="tooltip491083084"
-             >
-               Nina Ugnon
-             </UncontrolledTooltip>
-             <a
-               className="avatar avatar-sm"
-               href="#pablo"
-               id="tooltip528540780"
-               onClick={e => e.preventDefault()}
-             >
-               <img
-                 alt="..."
-                 className="rounded-circle"
-                 src={require("../../assets/img/theme/member3.jpg")}
-               />
-             </a>
-             <UncontrolledTooltip
-               delay={0}
-               target="tooltip528540780"
-             >
-               Alexandra Bozon
-             </UncontrolledTooltip>
-             <a
-               className="avatar avatar-sm"
-               href="#pablo"
-               id="tooltip237898869"
-               onClick={e => e.preventDefault()}
-             >
-               <img
-                 alt="..."
-                 className="rounded-circle"
-                 src={require("../../assets/img/theme/member4.jpg")}
-               />
-             </a>
-             <UncontrolledTooltip
-               delay={0}
-               target="tooltip237898869"
-             >
-               Sophie Ugnon
-             </UncontrolledTooltip>
-           </div>
-         </td>
          <td className="align-items-center">
            <Button
-             to={"../admin/management-edit-family/" + family.id}
+             to={"../admin/management-edit-family/" + family.id_famille}
              tag={Link}
              color="primary"
            >

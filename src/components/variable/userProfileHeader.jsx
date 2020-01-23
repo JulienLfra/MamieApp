@@ -15,7 +15,7 @@ const UserProfileHeader = ({ users }) => {
           <Col lg="7" md="10">
             <h1 className="display-2 text-white">{"Hello " + user.prenom}</h1>
             <p className="text-white mt-0 mb-5">
-              This is your profile page. You can see all your information and manage them here !
+              C'est votre page de profil. Vous pouvez voir toutes vos informations et les gérer ici !
             </p>
           </Col>
         </Row>

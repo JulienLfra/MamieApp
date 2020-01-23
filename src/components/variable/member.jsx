@@ -22,18 +22,18 @@ const Member = ({ members }) => {
               >
                 <img
                   alt="..."
-                  src={member.user_thumbnail}
+                  src={member.photo}
                 />
               </a>
               <Media>
                 <span className="mb-0 text-sm">
-                  {member.user_name + " " + member.user_firstname}
+                  {member.prenom + " " + member.nom}
                 </span>
               </Media>
             </Media>
           </th>
           <td>
-            <p>{member.user_birthday}</p>
+            <p>{member.age}</p>
           </td>
           <td className="align-items-center">
             <Button

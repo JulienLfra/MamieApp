@@ -9,52 +9,46 @@ import EventsEditEvent from "./components/contents/tabs/eventsEditEvent.jsx";
 var routes = [
   {
     path: "/index",
-    name: "Family",
+    name: "Famille",
     icon: "ni ni-satisfied text-primary",
     component: Family,
     layout: "/admin"
   },
   {
     path: "/events",
-    name: "Events",
+    name: "Evénement",
     icon: "ni ni-square-pin text-red",
     component: Events,
     layout: "/admin"
   },
   {
     path: "/management",
-    name: "Management",
+    name: "Gestion",
     icon: "ni ni-bullet-list-67 text-green",
     component: Management,
     layout: "/admin"
   },
   {
     path: "/user-profile",
-    name: "User Profile",
+    name: "Profil",
     icon: "ni ni-single-02 text-yellow",
     component: Profile,
     layout: "/admin"
   },
   {
     path: "/management-edit-family/:family_id",
-    name: "Edit Family",
-    icon: "ni ni-rocket text-yellow",
     component: ManagementEditFamily,
     layout: "/admin",
     invisible: true
   },
   {
     path: "/events-add-event",
-    name: "Add Event",
-    icon: "ni ni-rocket text-yellow",
     component: EventsAddEvent,
     layout: "/admin",
     invisible: true
   },
   {
     path: "/events-edit-event/:event_id",
-    name: "Edit Event",
-    icon: "ni ni-rocket text-yellow",
     component: EventsEditEvent,
     layout: "/admin",
     invisible: true

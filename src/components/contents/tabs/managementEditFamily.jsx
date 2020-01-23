@@ -20,7 +20,8 @@ import {
 } from "reactstrap";
 // core components
 import Header from "../../headers/header.jsx";
-import Member from "../../variable/member.jsx"
+import Member from "../../variable/member.jsx";
+import Const from "../../../const.js";
 
 class ManagementEditFamily extends React.Component {
  
@@ -32,7 +33,8 @@ class ManagementEditFamily extends React.Component {
 
     const { family_id } = this.props.match.params
 
-    fetch(`http://benjamin.molinet.free.fr/projetMamie/getUsersByFamily${family_id}.php`)
+    console.log(family_id);
+    fetch((Const.webpoint_list_member_family + family_id).toString())
     .then(result => result.json())
     .then((data) => {
       this.setState({ members: data })
@@ -51,7 +53,7 @@ class ManagementEditFamily extends React.Component {
             <div className="col">
               <Card className="bg-default shadow">
                 <CardHeader className="bg-transparent border-0">
-                  <h3 className="text-white mb-0">Members</h3>
+                  <h3 className="text-white mb-0">Membres</h3>
                 </CardHeader>
                 <Table
                   className="align-items-center table-dark table-flush"
@@ -59,9 +61,9 @@ class ManagementEditFamily extends React.Component {
                 >
                   <thead className="thead-dark">
                     <tr>
-                      <th scope="col">Name</th>
+                      <th scope="col">Nom</th>
                       <th scope="col">Age</th>
-                      <th scope="col">Delete</th>
+                      <th scope="col">Supprimer</th>
                     </tr>
                   </thead>
                   <Member members={this.state.members}></Member>
@@ -75,7 +77,7 @@ class ManagementEditFamily extends React.Component {
                     <CardHeader className="bg-transparent border-0">
                       <Row className="align-items-center">
                         <Col xs="8">
-                          <h3 className="text-white mb-0">Add members</h3>
+                          <h3 className="text-white mb-0">Ajouter un membre</h3>
                         </Col>
                       </Row>
                     </CardHeader>
@@ -83,7 +85,7 @@ class ManagementEditFamily extends React.Component {
                       <Form>
                         {/* recherche par nom */}
                         <h6 className="heading-small text-muted mb-4">
-                          By name:
+                          Par nom:
                         </h6>
                         <div className="pl-lg-4">
                           <Row>
@@ -104,7 +106,7 @@ class ManagementEditFamily extends React.Component {
                         <hr className="my-4" />
                         {/* recherche par mail */}
                         <h6 className="heading-small text-muted mb-4">
-                          By e-mail:
+                          Par mail:
                         </h6>
                         <div className="pl-lg-4">
                           <Row>
@@ -131,7 +133,7 @@ class ManagementEditFamily extends React.Component {
                           onClick={e => e.preventDefault()}
                           size="sm"
                         >
-                          Send invitation
+                          Envoyer l'invitation
                         </Button>
                       </Form>
                       <Button 
@@ -142,7 +144,7 @@ class ManagementEditFamily extends React.Component {
                           href="#pablo"     
                           size="sm"
                         >
-                          back to families
+                          retour aux familles
                       </Button>
                     </CardBody>
                   </Card> 

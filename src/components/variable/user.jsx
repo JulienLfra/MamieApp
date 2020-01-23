@@ -37,7 +37,7 @@ const User = ({ users }) => {
               <div className="col">
                 <div className="card-profile-stats d-flex justify-content-center mt-md-5">
                   <div>
-                    <span className="heading">10</span>
+                    <span className="heading">0</span>
                     <span className="description">Photos</span>
                   </div>
                 </div>
@@ -45,7 +45,7 @@ const User = ({ users }) => {
             </Row>
             <div className="text-center">
               <h3>
-                {user.nom + " " + user.prenom}
+                {user.prenom + " " + user.nom}
                 <span className="font-weight-light">, {user.age}</span>
               </h3>
               <div className="h5 font-weight-300">
@@ -73,14 +73,14 @@ const User = ({ users }) => {
           <CardHeader className="bg-white border-0">
             <Row className="align-items-center">
               <Col xs="8">
-                <h3 className="mb-0">My account</h3>
+                <h3 className="mb-0">Mon compte</h3>
               </Col>
             </Row>
           </CardHeader>
           <CardBody>
             <Form>
               <h6 className="heading-small text-muted mb-4">
-                User information
+                Information de l'utilisateur
               </h6>
               <div className="pl-lg-4">
                 <Row>
@@ -90,13 +90,13 @@ const User = ({ users }) => {
                         className="form-control-label"
                         htmlFor="input-username"
                       >
-                        Username
+                        Pseudo
                       </label>
                       <Input
                         className="form-control-alternative"
                         defaultValue=""
                         id="input-username"
-                        placeholder="Username"
+                        placeholder="pseudo"
                         type="text"
                       />
                     </FormGroup>
@@ -107,12 +107,13 @@ const User = ({ users }) => {
                         className="form-control-label"
                         htmlFor="input-email"
                       >
-                        Email address
+                        Adresse mail
                       </label>
                       <Input
                         className="form-control-alternative"
                         id="input-email"
-                        placeholder={user.mail}
+                        defaultValue={user.mail}
+                        placeholder="mail"
                         type="email"
                       />
                     </FormGroup>
@@ -125,13 +126,13 @@ const User = ({ users }) => {
                         className="form-control-label"
                         htmlFor="input-first-name"
                       >
-                        First name
+                        Prénom
                       </label>
                       <Input
                         className="form-control-alternative"
                         defaultValue={user.prenom}
                         id="input-first-name"
-                        placeholder="First name"
+                        placeholder="Prénom"
                         type="text"
                       />
                     </FormGroup>
@@ -142,13 +143,13 @@ const User = ({ users }) => {
                         className="form-control-label"
                         htmlFor="input-last-name"
                       >
-                        Last name
+                        Nom
                       </label>
                       <Input
                         className="form-control-alternative"
                         defaultValue={user.nom}
                         id="input-last-name"
-                        placeholder="Last name"
+                        placeholder="Nom"
                         type="text"
                       />
                     </FormGroup>
@@ -158,7 +159,7 @@ const User = ({ users }) => {
               <hr className="my-4" />
               {/* Address */}
               <h6 className="heading-small text-muted mb-4">
-                Contact information
+                Information de contact
               </h6>
               <div className="pl-lg-4">
                 <Row>
@@ -168,13 +169,13 @@ const User = ({ users }) => {
                         className="form-control-label"
                         htmlFor="input-address"
                       >
-                        Address
+                        Adresse
                       </label>
                       <Input
                         className="form-control-alternative"
                         defaultValue=""
                         id="input-address"
-                        placeholder="Home Address"
+                        placeholder="Adresse"
                         type="text"
                       />
                     </FormGroup>
@@ -187,13 +188,13 @@ const User = ({ users }) => {
                         className="form-control-label"
                         htmlFor="input-city"
                       >
-                        City
+                        Ville
                       </label>
                       <Input
                         className="form-control-alternative"
                         defaultValue={user.ville}
                         id="input-city"
-                        placeholder="City"
+                        placeholder="Ville"
                         type="text"
                       />
                     </FormGroup>
@@ -204,13 +205,13 @@ const User = ({ users }) => {
                         className="form-control-label"
                         htmlFor="input-country"
                    adresse_client   >
-                        Country
+                        Pays
                       </label>
                       <Input
                         className="form-control-alternative"
                         defaultValue={user.pays}
                         id="input-country"
-                        placeholder="Country"
+                        placeholder="Pays"
                         type="text"
                       />
                     </FormGroup>
@@ -221,12 +222,12 @@ const User = ({ users }) => {
                         className="form-control-label"
                         htmlFor="input-country"
                       >
-                        Postal code
+                        Code postal
                       </label>
                       <Input
                         className="form-control-alternative"
                         id="input-postal-code"
-                        placeholder="Postal code"
+                        placeholder="Code postal"
                         type="number"
                       />
                     </FormGroup>
@@ -235,13 +236,13 @@ const User = ({ users }) => {
               </div>
               <hr className="my-4" />
               {/* Description */}
-              <h6 className="heading-small text-muted mb-4">About me</h6>
+              <h6 className="heading-small text-muted mb-4">A propos de moi</h6>
               <div className="pl-lg-4">
                 <FormGroup>
-                  <label>About Me</label>
+                  <label>A propos de moi</label>
                   <Input
                     className="form-control-alternative"
-                    placeholder="A few words about you ..."
+                    placeholder="Quelques mots à propos de vous ..."
                     rows="4"
                     defaultValue={user.statut}
                     type="textarea"

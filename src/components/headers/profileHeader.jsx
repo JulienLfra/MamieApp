@@ -1,6 +1,7 @@
 import React from "react";
 
 import UserProfileHeader from "../variable/userProfileHeader.jsx";
+import Const from "../../const.js";
 
 class ProfileHeader extends React.Component {
 
@@ -9,7 +10,7 @@ class ProfileHeader extends React.Component {
   }
   
   componentDidMount() {
-    fetch('http://35.180.28.149:5000/personne?nom=Plaideau&prenom=Guillaume')
+    fetch(Const.webpoint_user)
     .then(result => result.json())
     .then((data) => {
       this.setState({ users: data })

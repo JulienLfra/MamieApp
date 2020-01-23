@@ -20,22 +20,43 @@ import {
 // core components
 import Header from "../../headers/header.jsx";
 import Family from "../../variable/family.jsx";
+import Const from "../../../const.js";
 
 class Management extends React.Component {
 
 state = {
+  users:[],
+  mailUser: "",
   families: [],
   nameFamily:"", 
   numberFamily: 0
 }
 
 componentDidMount() {
-  fetch('http://35.180.28.149:5000/familles')
+
+  fetch(Const.webpoint_user)
   .then(result => result.json())
   .then((data) => {
-    this.setState({ families: data })
+    this.setState({ users: data })
+    this.setState({ mailUser: this.state.users[0].mail})
   })
   .catch(console.log)
+
+  setTimeout(() => {
+  
+    fetch((Const.webpoint_list_family + this.state.mailUser).toString())
+    .then(result => result.json())
+    .then((data) => {
+      this.setState({ families: data })
+      console.log(this.state.families)
+    })
+    .catch(console.log)
+
+   }, 1000);
+
+  
+
+ 
 }
 
 hideShow = (e) =>{
@@ -55,7 +76,7 @@ handleSubmit = event =>{
   event.preventDefault();
   console.log("Family name : " + this.state.nameFamily)
   console.log("Family number : " + this.state.numberFamily)
-  const url ="http://35.180.28.149:5000/famille"
+  const url = Const.webpoint_list_family
   const data = { nom:this.state.nameFamily, nombreMembre:this.state.numberFamily }
   
   fetch(url, { 
@@ -83,7 +104,7 @@ handleSubmit = event =>{
                 <CardHeader className="bg-transparent border-0">
                   <Row>
                     <Col xs="8">
-                      <h3 className="text-white mb-0">My families</h3>
+                      <h3 className="text-white mb-0">Mes familles</h3>
                     </Col>
                     <Col className="text-right" xs="4">
                       <Button
@@ -92,7 +113,7 @@ handleSubmit = event =>{
                         onClick={e => this.hideShow(e)}
                         size="sm"
                       >
-                        Add a family
+                        Ajouter une famille
                       </Button>
                     </Col>
                   </Row>
@@ -103,11 +124,10 @@ handleSubmit = event =>{
                 >
                   <thead className="thead-dark">
                     <tr>
-                      <th scope="col">Family</th>
-                      <th scope="col">Number</th>
-                      <th scope="col">Members</th>
-                      <th scope="col">Edit</th>
-                      <th scope="col">Delete</th>
+                      <th scope="col">Famille</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Modifier</th>
+                      <th scope="col">Supprimer</th>
                     </tr>
                   </thead>
                     <Family families={this.state.families}></Family>
@@ -121,7 +141,7 @@ handleSubmit = event =>{
                     <CardHeader className="bg-transparent border-0">
                       <Row className="align-items-center">
                         <Col xs="8">
-                          <h3 className="text-white mb-0">Add a family</h3>
+                          <h3 className="text-white mb-0">Ajouter une famille</h3>
                         </Col>
                       </Row>
                     </CardHeader>
@@ -129,7 +149,7 @@ handleSubmit = event =>{
                       <Form onSubmit={this.handleSubmit}>
                         {/* Mettre le nom */}
                         <h6 className="heading-small text-muted mb-4">
-                          Name:
+                          Nom:
                         </h6>
                         <div className="pl-lg-4">
                           <Row>
@@ -148,12 +168,12 @@ handleSubmit = event =>{
                             {/* bouton creation */}
                               <Button 
                                 type="submit"
-                                value="Add user"
+                                value="Add a family"
                                 className="float-right"
                                 color="primary"
                                 size="sm"
                               >
-                                Create
+                                Créer
                               </Button>
                               </Col>
                           </Row>

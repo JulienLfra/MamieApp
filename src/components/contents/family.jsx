@@ -24,9 +24,9 @@ class Family extends React.Component {
                   <Row className="align-items-center">
                     <div className="col">
                       <h6 className="text-uppercase text-light ls-1 mb-1">
-                        Family tree
+                        Arbre généalogique
                       </h6>
-                      <h2 className="text-white mb-0">Bozon Family</h2>
+                      <h2 className="text-white mb-0">Famille</h2>
                     </div>
                   </Row>
                 </CardHeader>

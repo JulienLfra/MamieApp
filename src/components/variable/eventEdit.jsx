@@ -34,7 +34,7 @@ const EventEdit = ({ events }) => {
            <Form>
              {/* Nom de l'evenement */}
              <h6 className="heading-small text-muted mb-4">
-                 Name : 
+                 Nom : 
              </h6>
              <div className="pl-lg-4">
                <Row>
@@ -114,7 +114,7 @@ const EventEdit = ({ events }) => {
                onClick={e => e.preventDefault()}
                size="sm"
              >
-               Create event
+               Créer un événement
              </Button>
            </Form>
            {/* bouton back */}
@@ -126,7 +126,7 @@ const EventEdit = ({ events }) => {
               href="#pablo"     
               size="sm"
             >
-              back to events
+              retour aux événements
           </Button>
          </CardBody>
        </Card> 
