@@ -19,16 +19,32 @@ import Const from "../../../const.js";
 class Events extends React.Component {
   
   state = {
+    users: [],
+    mailUser: "",
     events: []
   }
   
   componentDidMount() {
-    fetch(Const.webpoint_list_event)
+    
+    fetch(Const.webpoint_user)
     .then(result => result.json())
     .then((data) => {
-      this.setState({ events: data })
+      this.setState({ users: data })
+      this.setState({ mailUser: this.state.users[0].mail})
     })
     .catch(console.log)
+
+    setTimeout(() => {
+
+      fetch((Const.webpoint_list_event + this.state.mailUser).toString())
+      .then(result => result.json())
+      .then((data) => {
+        this.setState({ events: data })
+      })
+      .catch(console.log)
+
+    }, 1000);
+
   }
 
   render() {

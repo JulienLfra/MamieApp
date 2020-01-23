@@ -8,6 +8,7 @@ import {
 // core components
 import Header from "../../headers/header.jsx";
 import EventEdit from "../../variable/eventEdit.jsx"
+import Const from "../../../const.js"
 
 class EventsEditEvent extends React.Component {
 
@@ -19,7 +20,10 @@ class EventsEditEvent extends React.Component {
 
     const { event_id } = this.props.match.params
 
-    fetch(`http://benjamin.molinet.free.fr/projetMamie/getFamilyById${event_id}.php`)
+    console.log(event_id);
+    console.log((Const.webpoint_edit_event + event_id).toString());
+
+    fetch((Const.webpoint_edit_event + event_id).toString())
     .then(result => result.json())
     .then((data) => {
       this.setState({ events: data })

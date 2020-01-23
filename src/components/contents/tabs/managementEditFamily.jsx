@@ -33,7 +33,6 @@ class ManagementEditFamily extends React.Component {
 
     const { family_id } = this.props.match.params
 
-    console.log(family_id);
     fetch((Const.webpoint_list_member_family + family_id).toString())
     .then(result => result.json())
     .then((data) => {
@@ -129,7 +128,6 @@ class ManagementEditFamily extends React.Component {
                         <Button 
                           className="float-right"
                           color="primary"
-                          href="#pablo"
                           onClick={e => e.preventDefault()}
                           size="sm"
                         >
@@ -140,8 +138,7 @@ class ManagementEditFamily extends React.Component {
                           className="float-left"
                           to="../management"
                           tag={Link}
-                          color="primary"
-                          href="#pablo"     
+                          color="primary" 
                           size="sm"
                         >
                           retour aux familles

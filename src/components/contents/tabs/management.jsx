@@ -48,7 +48,6 @@ componentDidMount() {
     .then(result => result.json())
     .then((data) => {
       this.setState({ families: data })
-      console.log(this.state.families)
     })
     .catch(console.log)
 
@@ -109,7 +108,6 @@ handleSubmit = event =>{
                     <Col className="text-right" xs="4">
                       <Button
                         color="primary"
-                        href="#pablo"
                         onClick={e => this.hideShow(e)}
                         size="sm"
                       >

@@ -162,8 +162,7 @@ class EventsAddEvent extends React.Component {
                           className="float-left"
                           to="../admin/events"
                           tag={Link}
-                          color="primary"
-                          href="#pablo"     
+                          color="primary"   
                           size="sm"
                         >
                           retour aux événements

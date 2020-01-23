@@ -16,7 +16,6 @@ const Family = ({ families }) => {
            <Media className="align-items-center">
              <span
                className="avatar rounded-circle mr-3"
-               href="#pablo"
              >
                <img
                  alt="..."
@@ -35,7 +34,7 @@ const Family = ({ families }) => {
          </td>
          <td className="align-items-center">
            <Button
-             to={"../admin/management-edit-family/" + family.id_famille}
+             to={"../admin/management-edit-family/" + family.id}
              tag={Link}
              color="primary"
            >

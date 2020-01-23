@@ -31,8 +31,8 @@ const Event = ({ events }) => {
         <CardBody>
           <Card className="bg-default shadow">
             <img
-              alt="..."
-              src={require("../../assets/img/theme/events-card.jpg")}
+              alt={require("../../assets/img/theme/events-card.jpg")}
+              src={event.photo}
             />
           </Card>
         </CardBody>

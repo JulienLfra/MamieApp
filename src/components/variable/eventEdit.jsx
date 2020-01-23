@@ -26,7 +26,7 @@ const EventEdit = ({ events }) => {
          <CardHeader className="bg-transparent border-0">
            <Row className="align-items-center">
              <Col xs="8">
-               <h3 className="text-white mb-0">{event.family_name}</h3>
+               <h3 className="text-white mb-0">{event.nom}</h3>
              </Col>
            </Row>
          </CardHeader>
@@ -45,7 +45,7 @@ const EventEdit = ({ events }) => {
                          <InputGroupText>
                          </InputGroupText>
                        </InputGroupAddon>
-                       <Input placeholder="..." type="text" defaultValue={event.family_name} />
+                       <Input placeholder="..." type="text" defaultValue={event.nom} />
                      </InputGroup>
                    </FormGroup>
                  </Col>
@@ -85,7 +85,7 @@ const EventEdit = ({ events }) => {
                            <InputGroupText>
                            </InputGroupText>
                          </InputGroupAddon>
-                         <Input placeholder="..." type="text" />
+                         <Input placeholder="..." type="text" defaultValue={event.lieu} />
                        </InputGroup>
                      </FormGroup>
                  </Col>
@@ -110,8 +110,6 @@ const EventEdit = ({ events }) => {
              <Button 
                className="float-right"
                color="primary"
-               href="#pablo"
-               onClick={e => e.preventDefault()}
                size="sm"
              >
                Créer un événement
@@ -122,8 +120,7 @@ const EventEdit = ({ events }) => {
               className="float-left"
               to="../events"
               tag={Link}
-              color="primary"
-              href="#pablo"     
+              color="primary"  
               size="sm"
             >
               retour aux événements
