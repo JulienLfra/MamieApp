@@ -75,7 +75,7 @@ handleSubmit = event =>{
   event.preventDefault();
   console.log("Family name : " + this.state.nameFamily)
   console.log("Family number : " + this.state.numberFamily)
-  const url = Const.webpoint_list_family
+  const url = Const.webpoint_add_family
   const data = { nom:this.state.nameFamily, nombreMembre:this.state.numberFamily }
   
   fetch(url, { 

@@ -65,7 +65,7 @@ const EventEdit = ({ events }) => {
                            <InputGroupText>
                            </InputGroupText>
                          </InputGroupAddon>
-                         <Input placeholder="Format: XX-XX-XXXX" type="text" />
+                         <Input placeholder="Format: XX-XX-XXXX" type="text" defaultValue={event.date}/>
                        </InputGroup>
                      </FormGroup>
                  </Col>
