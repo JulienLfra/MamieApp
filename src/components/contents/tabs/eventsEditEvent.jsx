@@ -20,9 +20,6 @@ class EventsEditEvent extends React.Component {
 
     const { event_id } = this.props.match.params
 
-    console.log(event_id);
-    console.log((Const.webpoint_edit_event + event_id).toString());
-
     fetch((Const.webpoint_edit_event + event_id).toString())
     .then(result => result.json())
     .then((data) => {

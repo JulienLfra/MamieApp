@@ -19,6 +19,7 @@ import {
 } from "reactstrap";
 // core components
 import Header from "../../headers/header.jsx";
+import Const from "../../../const.js";
 
 class EventsAddEvent extends React.Component {
 
@@ -39,7 +40,7 @@ class EventsAddEvent extends React.Component {
     console.log("Event date : " + this.state.dateEvent)
     console.log("Event lieu : " + this.state.lieuEvent)
     console.log("Event picture : " + this.state.picEvent)
-    const url ="http://35.180.28.149:5000//evenement"
+    const url = Const.webpoint_add_event
     const data = { nom:this.state.nameEvent, date:this.state.dateEvent, lieu:this.state.lieuEvent, photo:this.state.picEvent }
     
     fetch(url, { 
@@ -50,7 +51,7 @@ class EventsAddEvent extends React.Component {
           .catch(error => console.error('Error:', error))
             .then(response => console.log('Success:', response)); 
   
-      //setTimeout(() => { document.location.reload(true); }, 1000);
+      setTimeout(() => { document.location.reload(true); }, 1000);
       
   }
 

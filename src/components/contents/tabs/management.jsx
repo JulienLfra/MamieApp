@@ -52,9 +52,6 @@ componentDidMount() {
     .catch(console.log)
 
    }, 1000);
-
-  
-
  
 }
 

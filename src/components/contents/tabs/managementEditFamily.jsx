@@ -33,7 +33,7 @@ class ManagementEditFamily extends React.Component {
 
     const { family_id } = this.props.match.params
 
-    fetch((Const.webpoint_list_member_family + family_id).toString())
+    fetch((Const.webpoint_list_member_family + family_id + Const.webpoint_list_member_family_end).toString())
     .then(result => result.json())
     .then((data) => {
       this.setState({ members: data })
@@ -62,6 +62,7 @@ class ManagementEditFamily extends React.Component {
                     <tr>
                       <th scope="col">Nom</th>
                       <th scope="col">Age</th>
+                      <th scope="col">Visibilité</th>
                       <th scope="col">Supprimer</th>
                     </tr>
                   </thead>
