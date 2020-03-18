@@ -12,12 +12,29 @@ import ReactFamilyTree from 'react-family-tree';
 import FamilyNode from "./tabs/FamilyNode";
 
 import Header from "../headers/header.jsx";
+import Const from "../../const";
 
 class Family extends React.Component {
 
 
+    state = {
+        nodes: []
+    }
+
+    componentDidMount() {
+
+        fetch((Const.webpoint_genealogie).toString())
+            .then(result => result.json())
+            .then((data) => {
+                this.setState({ nodes: data })
+            })
+            .catch(console.log)
+    }
+
+
   render() {
-      const myID = '1';
+
+      const myID = '4416';
 
       const WIDTH = 100;
       const HEIGHT = 100;
@@ -39,169 +56,108 @@ class Family extends React.Component {
                 </CardHeader>
                 <CardBody>
                   <div className="chart">
-                    {/* TODO : Arbre généalogique */}
-
                       <ReactFamilyTree
-                          node=
-                            {[
-                                {
-                                    "id": "0",
-                                    "gender": "male",
-                                    "name": "Benoit Molinet",
-                                    "parents": [
-                                        {
-                                            "id": "2",
-                                            "type": "blood"
-                                        },
-                                        {
-                                            "id": "3",
-                                            "type": "blood"
-                                        }
-                                    ],
-                                    "siblings": [],
-                                    "spouses": [
-                                        {
-                                            "id": "1",
-                                            "type": "married"
-                                        }
-                                    ],
-                                    "children": []
-                                },
-                                {
-                                    "id": "1",
-                                    "gender": "female",
-                                    "name": "Charlotte Molinet",
-                                    "parents": [],
-                                    "siblings": [],
-                                    "spouses": [
-                                        {
-                                            "id": "0",
-                                            "type": "married"
-                                        }
-                                    ],
-                                    "children": []
-                                },
-                                {
-                                    "id": "2",
-                                    "gender": "female",
-                                    "name": "Mamie Molinet",
-                                    "parents": [],
-                                    "siblings": [],
-                                    "spouses": [
-                                        {
-                                            "id": "3",
-                                            "type": "married"
-                                        }
-                                    ],
-                                    "children": [
-                                        {
-                                            "id": "0",
-                                            "type": "blood"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id": "3",
-                                    "gender": "male",
-                                    "name": "Papy Molinet",
-                                    "parents": [],
-                                    "siblings": [],
-                                    "spouses": [
-                                        {
-                                            "id": "2",
-                                            "type": "married"
-                                        }
-                                    ],
-                                    "children": [
-                                        {
-                                            "id": "0",
-                                            "type": "blood"
-                                        }
-                                    ]
-                                },
-                            ]}
-                          nodes = {
-                              [
-                                  {
-                                      "id": "1",
-                                      "gender": "male",
-                                      "name": "Benjamin Molinet",
-                                      "parents": [
-                                          {
-                                              "id": "2",
-                                              "type": "blood"
-                                          },
-                                          {
-                                              "id": "4",
-                                              "type": "blood"
-                                          }
-                                      ],
-                                      "siblings": [
-                                          {
-                                              "id": "3",
-                                          }
-                                      ],
-                                      "spouses": [],
-                                      "children": []
-                                  },
-                                  {
-                                      "id": "2",
-                                      "gender": "male",
-                                      "name": "Benoit Molinet",
-                                      "parents": [],
-                                      "siblings": [],
-                                      "spouses": [
-                                          {
-                                              "id": "4",
-                                          }
-                                      ],
-                                      "children": [
-                                          {
-                                              "id": "1",
-                                          },
-                                          {
-                                              "id": "3",
-                                          }
-                                      ]
-                                  },
-                                  {
-                                      "id": "3",
-                                      "gender": "female",
-                                      "name": "Charlotte Molinet",
-                                      "parents": [
-                                          {
-                                              "id": "2",
-                                          },
-                                          {
-                                              "id": "4",
-                                          }
-                                      ],
-                                      "siblings": [],
-                                      "spouses": [],
-                                      "children": []
-                                  },
-                                  {
-                                      "id": "4",
-                                      "gender": "female",
-                                      "name": "Anne Mary",
-                                      "parents": [],
-                                      "siblings": [],
-                                      "spouses": [
-                                          {
-                                              "id": "2",
-                                          }
-                                      ],
-                                      "children": [
-                                          {
-                                              "id": "1",
-                                          },
-                                          {
-                                              "id": "3",
-                                          }
-                                      ]
-                                  }
-                              ]
-                                   }
+
+                          nodes = {[
+                              {
+                                  "id": "4416",
+                                  "gender": "male",
+                                  "name": "Guillaume Plaideau",
+                                  "parents": [
+                                      {
+                                          "id": "4415"
+                                      },
+                                      {
+                                          "id": "4417"
+                                      }
+                                  ],
+                                  "siblings": [
+                                      {
+                                          "id": "3891"
+                                      }
+                                  ],
+                                  "spouses": [
+                                      {
+                                          "id": "3892"
+                                      }
+                                  ],
+                                  "children": []
+                              },
+                              {
+                                  "id": "4415",
+                                  "gender": "female",
+                                  "name": "Murielle Plaideau",
+                                  "parents": [],
+                                  "siblings": [],
+                                  "spouses": [
+                                      {
+                                          "id": "4417"
+                                      }
+                                  ],
+                                  "children": [
+                                      {
+                                          "id": "3891"
+                                      },
+                                      {
+                                          "id": "4416"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "id": "4417",
+                                  "gender": "male",
+                                  "name": "Alain Plaideau",
+                                  "parents": [],
+                                  "siblings": [],
+                                  "spouses": [
+                                      {
+                                          "id": "4415"
+                                      }
+                                  ],
+                                  "children": [
+                                      {
+                                          "id": "3891"
+                                      },
+                                      {
+                                          "id": "4416"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "id": "3891",
+                                  "gender": "female",
+                                  "name": "Eleonore Plaideau",
+                                  "parents": [
+                                      {
+                                          "id": "4415"
+                                      },
+                                      {
+                                          "id": "4417"
+                                      }
+                                  ],
+                                  "siblings": [
+                                      {
+                                          "id": "4416"
+                                      }
+                                  ],
+                                  "spouses": [],
+                                  "children": []
+                              },
+                              {
+                                  "id": "3892",
+                                  "gender": "female",
+                                  "name": "Stella des Sources",
+                                  "parents": [],
+                                  "siblings": [],
+                                  "spouses": [
+                                      {
+                                          "id": "4416"
+                                      }
+                                  ],
+                                  "children": []
+                              }
+                          ]}
+
                           rootId={myID}
                           width={WIDTH}
                           height={HEIGHT}
@@ -218,8 +174,6 @@ class Family extends React.Component {
                               />
                           )}
                       />
-
-
 
                   </div>
                 </CardBody>
